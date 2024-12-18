@@ -1,0 +1,82 @@
+<MainScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+
+        Label:
+            text: 'Хаб'
+            font_size: 32
+            size_hint_y: None
+            height: 50
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 10
+            Button:
+                text: 'Учитель'
+                on_press: root.goto_login('Teacher')
+            Button:
+                text: 'Ученик'
+                on_press: root.goto_login('Student')
+
+<DashboardScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+
+        Label:
+            text: 'Ресурсы'
+            font_size: 24
+            size_hint_y: None
+            height: 50
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 10
+            size_hint_y: None
+            height: self.minimum_height
+
+            Button:
+                text: 'Ресурс 1'
+                on_press: root.goto_resource(0)
+            Button:
+                text: 'Ресурс 2'
+                on_press: root.goto_resource(1)
+            Button:
+                text: 'Ресурс 3'
+                on_press: root.goto_resource(2)
+            Button:
+                text: 'Ресурс 4'
+                on_press: root.goto_resource(3)
+            Button:
+                text: 'Ресурс 5'
+                on_press: root.goto_resource(4)
+            Button:
+                text: 'Ресурс 6'
+                on_press: root.goto_resource(5)
+
+<ResourceScreen>:
+    ScrollView:
+        GridLayout:
+            cols: 2
+            size_hint_y: None
+            height: self.minimum_height
+            spacing: 10
+            padding: 10
+
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: 150
+                Label:
+                    text: 'Ресурс 1'
+                    size_hint_y: None
+                    height: 30
+                Button:
+                    text: 'Посетить'
+                    size_hint_y: None
+                    height: 40
+                    on_press: root.open_webview('https://example.com')
+
